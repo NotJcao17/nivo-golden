@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivo Golden - Snacks Naturales para Mascotas</title>
+    <meta name="description" content="Snacks y premios naturales para perros y gatos. 100% natural con colágeno y proteína para la salud dental de tu mascota.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="img/img-logo.png" alt="Nivo Golden" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO CON CARRUSEL -->
+    <section id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="hero-bg" style="background-image: url('img/img-hero-1.jpg')"></div>
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-lg-6">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">100% Natural</h1>
+                                    <p class="hero-subtitle">Snacks premium con colágeno y proteína para la salud dental de tu mascota</p>
+                                    <div class="hero-buttons">
+                                        <a href="#productos" class="btn btn-primary btn-lg me-3">Explorar Productos</a>
+                                        <a href="productos.html" class="btn btn-outline-primary btn-lg">Ver Catálogo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2-->
+                <div class="carousel-item">
+                    <div class="hero-bg" style="background-image: url('img/img-hero-2.jpg')"></div>
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-lg-6">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">Colágeno y Proteína</h1>
+                                    <p class="hero-subtitle">Ingredientes naturales que fortalecen la salud y vitalidad de tu mascota</p>
+                                    <div class="hero-buttons">
+                                        <a href="#productos" class="btn btn-primary btn-lg me-3">Explorar Productos</a>
+                                        <a href="productos.html" class="btn btn-outline-primary btn-lg">Ver Catálogo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="hero-bg" style="background-image: url('img/img-hero-3.jpg')"></div>
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-lg-6">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">Salud Dental</h1>
+                                    <p class="hero-subtitle">Premios que cuidan los dientes y encías mientras tu mascota disfruta</p>
+                                    <div class="hero-buttons">
+                                        <a href="#productos" class="btn btn-primary btn-lg me-3">Explorar Productos</a>
+                                        <a href="productos.html" class="btn btn-outline-primary btn-lg">Ver Catálogo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="nosotros-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="nosotros-content">
+                        <h2 class="section-title">Nosotros</h2>
+                        <p class="lead">Desde León, Guanajuato, creamos snacks naturales con amor para tu mascota.</p>
+                        <p>En Nivo Golden creemos que nuestras mascotas merecen lo mejor. Por eso desarrollamos productos 100% naturales, ricos en colágeno y proteína, que no solo son deliciosos sino que también contribuyen a la salud dental y bienestar general de perros y gatos.</p>
+                        <!-- Valores de la empresa -->
+                        <div class="valores mt-4">
+                            <div class="valor-item d-flex align-items-center mb-3">
+                                <i style="color:#78b82a" class="fas fa-heart me-3"></i>
+                                <span>Amor por las mascotas</span>
+                            </div>
+                            <div class="valor-item d-flex align-items-center mb-3">
+                                <i style="color:#78b82a" class="fas fa-leaf me-3"></i>
+                                <span>Productos 100% naturales</span>
+                            </div>
+                            <div class="valor-item d-flex align-items-center">
+                                <i style="color:#78b82a" class="fas fa-award me-3"></i>
+                                <span>Calidad mexicana</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="nosotros-image">
+                        <img src="img/img-nosotros.png" alt="Equipo Nivo Golden" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRODUCTOS DESTACADOS -->
+    <section id="productos" class="productos-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Productos Destacados</h2>
+                <p class="section-subtitle">Descubre nuestros snacks naturales para perros y gatos</p>
+            </div>
+            <div class="row">
+                <!-- Productos para Perros -->
+                <div class="col-lg-6 mb-4">
+                    <div class="producto-categoria">
+                        <div class="categoria-header">
+                            <h3>Productos para Perros</h3>
+                            <p>Snacks naturales que fortalecen y cuidan</p>
+                        </div>
+                        <div class="productos-carousel">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="producto-card">
+                                        <img src="img/img-productos-perro-1.png" alt="Colágeno para Perros" class="img-fluid">
+                                        <h5>Caja con 2kg de Palitos Surtido</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="producto-card">
+                                        <img src="img/img-productos-perro-2.png" alt="Palitos Dentales" class="img-fluid">
+                                        <h5>Mix Natural de Deshidratados</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="producto-card">
+                                        <img src="img/img-productos-perro-3.png" alt="Colágeno para Perros" class="img-fluid">
+                                        <h5>Caja con 2kg de Palitos Sabor Pollo y Res</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="productos.html" class="btn btn-outline-primary">Ver Todos</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Productos para Gatos -->
+                <div class="col-lg-6 mb-4">
+                    <div class="producto-categoria">
+                        <div class="categoria-header">
+                            <h3>Productos para Gatos</h3>
+                            <p>Premios naturales que encantan</p>
+                        </div>
+                        <div class="productos-carousel">
+                            <div class="row justify-content-evenly">
+                                <div class="col-md-4 mb-3">
+                                    <div class="producto-card">
+                                        <img src="img/img-productos-gato-1.png" alt="Pollo Natural" class="img-fluid">
+                                        <h5>Charal deshidratado</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="producto-card">
+                                        <img src="img/img-productos-gato-2.png" alt="Pescado Premium" class="img-fluid">
+                                        <h5>Premios de pescado</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="productos.html" class="btn btn-outline-primary">Ver Todos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CERTIFICACIONES -->
+    <section id="certificaciones" class="certificaciones-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Certificaciones y Calidad</h2>
+                <p class="section-subtitle">Respaldamos la calidad de nuestros productos</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="certificacion-item text-center">
+                        <img src="img/img-cert-1.png" alt="100% Natural" class="cert-logo">
+                        <h5>Esquema de Certificación de Seguridad Alimentaria.</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="certificacion-item text-center">
+                        <img src="img/img-cert-2.png" alt="Calidad Premium" class="cert-logo">
+                        <h5>Calidad y compromiso en los productos. Orgullosamente guanajuatenses.</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="certificacion-item text-center">
+                        <img src="img/img-cert-3.png" alt="Sustentable" class="cert-logo">
+                        <h5>Empresa dirigida y operada en su mayoría por mujeres.</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="certificacion-item text-center">
+                        <img src="img/img-cert-4.png" alt="Hecho en México" class="cert-logo">
+                        <h5>Sistema de Inocuidad Alimentaria.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BLOG DESTACADO -->
+    <section id="blog" class="blog-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Blog Destacado</h2>
+                <p class="section-subtitle">Consejos y tips para el cuidado de tu mascota</p>
+            </div>
+            <!-- Artículos del blog simplificados -->
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="img/img-blog-1.png" alt="Salud Dental" class="img-fluid">
+                        <div class="blog-content">
+                            <span class="blog-date">15 Dic 2024</span>
+                            <h5>Cómo elegir el producto adecuado para tu mascota: Guia esencial</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="blog.html" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="img/img-blog-2.png" alt="Nutrición Felina" class="img-fluid">
+                        <div class="blog-content">
+                            <span class="blog-date">10 Dic 2024</span>
+                            <h5>Desenmascarando los mitos de la carnaza: Lo que realmente estás dando a tu perro</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="blog.html" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="img/img-blog-3.png" alt="Beneficios Colágeno" class="img-fluid">
+                        <div class="blog-content">
+                            <span class="blog-date">5 Dic 2024</span>
+                            <h5>Los sorprendentes beneficios del omega en la salud de tu gato</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="blog.html" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="blog.html" class="btn btn-primary">Ver Más Artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO RÁPIDO -->
+    <section id="contacto-rapido" class="contacto-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <h2 class="section-title">Contáctanos</h2>
+                    <!-- Formulario de contacto -->
+                    <form class="contacto-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Tu email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Información de contacto y redes sociales -->
+                    <div class="contacto-info">
+                        <h4>Síguenos</h4>
+                        <div class="social-links mb-4">
+                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                        </div>
+                        <h4>Compra en</h4>
+                        <div class="tiendas-links">
+                            <a href="#" class="tienda-link"><i class="fab fa-amazon"></i> Amazon</a>
+                            <a href="#" class="tienda-link"><i class="fas fa-shopping-cart"></i> Mercado Libre</a>
+                            <a href="#" class="tienda-link"><i class="fas fa-store"></i> Walmart</a>
+                        </div>
+                        <!-- Ubicación -->
+                        <div class="ubicacion mt-4">
+                            <h5><i style="color:#78b82a" class="fas fa-map-marker-alt"></i> León, Guanajuato</h5>
+                            <div class="mini-mapa mt-2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0070955476585!2d-101.66428487845974!3d21.191877086899023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bb8e0fbddfe4f%3A0x19f6e2e42b87f5ed!2sNivo%20Golden%20by%20NIVO%20MANUFACTURA!5e0!3m2!1ses-419!2smx!4v1757143348285!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-4 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <img src="img/img-logo-2.png" alt="Nivo Golden" class="footer-logo mb-3">
+                    <p>Snacks naturales para mascotas desde León, Guanajuato.</p>
+                </div>
+                <div class="col-lg-2 mb-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light">Inicio</a></li>
+                        <li><a href="productos.html" class="text-light">Productos</a></li>
+                        <li><a href="blog.html" class="text-light">Blog</a></li>
+                        <li><a href="contacto.html" class="text-light">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <h6>Productos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="productos.html#perros" class="text-light">Para Perros</a></li>
+                        <li><a href="productos.html#gatos" class="text-light">Para Gatos</a></li>
+                        <li><a href="productos.html" class="text-light">Todos los Productos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <div class="social-icons">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Nivo Golden. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Hecho con ❤️ en León, Guanajuato</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/524771234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
