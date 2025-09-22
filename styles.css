@@ -112,6 +112,16 @@ h6 {
   box-shadow: var(--shadow);
 }
 
+.btn-outline-primary.active,
+.btn-outline-primary:active,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff; /* texto en blanco para contraste */
+  box-shadow: var(--shadow);
+}
+
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -228,7 +238,7 @@ h6 {
   border-radius: 10px;
   transition: var(--transition);
   box-shadow: var(--shadow);
-  min-height: 280px;
+  min-height: 260px;
 }
 
 .producto-card:hover {
