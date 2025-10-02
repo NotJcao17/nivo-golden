@@ -9,16 +9,28 @@ document.addEventListener("DOMContentLoaded", () => {
     download: true,
     header: true,
     complete: (results) => {
-      const data = results.data.filter((row) => row.name && row.image)
+      try {
+        const data = results.data.filter((row) => row.name && row.image)
 
-      const perros = data.filter((p) => p.category !== "gato")
-      const gatos = data.filter((p) => p.category === "gato")
+        if (!data || data.length === 0) {
+          throw new Error("No se encontraron productos")
+        }
 
-      renderProducts(perros, productosPerros)
-      renderProducts(gatos, productosGatos)
+        const perros = data.filter((p) => p.category !== "gato")
+        const gatos = data.filter((p) => p.category === "gato")
 
-      setupFilters()
-      setupTabs()
+        renderProducts(perros, productosPerros)
+        renderProducts(gatos, productosGatos)
+
+        setupFilters()
+        setupTabs()
+      } catch (err) {
+        mostrarError(err.message)
+      }
+    },
+    error: (err) => {
+      console.error("Error al cargar los datos", err)
+      mostrarError("No pudimos cargar los productos. Intenta más tarde.")
     },
   })
 

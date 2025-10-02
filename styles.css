@@ -112,15 +112,15 @@ h6 {
   box-shadow: var(--shadow);
 }
 
+.btn-outline-primary:focus,
 .btn-outline-primary.active,
 .btn-outline-primary:active,
 .show > .btn-outline-primary.dropdown-toggle {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #fff; /* texto en blanco para contraste */
-  box-shadow: var(--shadow);
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 0.25rem rgba(120, 184, 42, 0.4) !important;
 }
-
 
 /* Hero Section */
 .hero-section {
@@ -471,9 +471,11 @@ h6 {
 }
 
 .category-tabs .nav-link.active {
-  background: var(--primary-color);
-  color: white;
+  background-color: var(--primary-color);
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .filter-buttons {
   margin-bottom: 2rem;
@@ -896,16 +898,20 @@ h6 {
   background: #25d366;
 }
 
+.social-link-contact.tiktok:hover {
+  background: #FF2C55 ;
+}
+
 .purchase-link.amazon:hover {
   background: #ff9900;
 }
 
 .purchase-link.mercadolibre:hover {
-  background: #ffe700;
+  background: #FFE600;
 }
 
 .purchase-link.walmart:hover {
-  background: #0056e8;
+  background: #0071CE;
 }
 
 .map-container {

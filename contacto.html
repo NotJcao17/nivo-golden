@@ -25,7 +25,6 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <!-- Changed image name to start with img -->
                 <img src="img/img-logo.png" alt="Nivo Golden" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -67,10 +66,10 @@
         <div class="container">
             <div class="row">
                 <!-- FORMULARIO DE CONTACTO -->
-                <div class="col-lg-8">
+                <div class="col-lg-8 mb-2">
                     <div class="contact-form-container">
                         <h3 class="mb-3">Envíanos un Mensaje</h3>
-                        <form class="contact-form-full" id="contactForm"
+                        <form class="contact-form-full" data-captcha="true" id="contactForm"
                             action="https://formsubmit.co/beloder569@dotxan.com" method="POST">
 
                             <!-- Campos -->
@@ -95,14 +94,17 @@
                                 <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                             </div>
 
-                                <!-- Config extra -->
-                            <input type="hidden" name="_next" value="http://127.0.0.1:5501/gracias.html">
-                            <input type="hidden" name="_captcha" value="false">
+                            <!-- Config extra -->
+                            <input type="hidden" name="_next" value="https://nivogolden.netlify.app/gracias">
 
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
                             </button>
                         </form>
+                        <p class="form-text small text-muted">
+                            Al enviar el formulario aceptas que Nivo Golden utilice tus datos para responder tu consulta.
+                            No compartimos tu información con terceros. 
+                        </p>
 
                     </div>
                 </div>
@@ -114,29 +116,29 @@
 
                         <!-- Detalles de contacto -->
 
-                        <div class="contact-item mb-4">
+                        <div class="contact-item mb-4 d-flex align-items-center">
                             <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                                <i class="fas fa-phone fa-lg"></i>
                             </div>
                             <div class="contact-details">
                                 <h5>Teléfono</h5>
-                                <p><a href="tel:+524771234567">+52 477 123 4567</a></p>
+                                <p class="mb-0"><a href="https://wa.me/524777877081">(477) 787 70 81</a></p>
                             </div>
                         </div>
 
-                        <div class="contact-item mb-4">
+                        <div class="contact-item mb-4 d-flex align-items-center">
                             <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope fa-lg"></i>
                             </div>
                             <div class="contact-details">
                                 <h5>Email</h5>
-                                <p><a href="mailto:info@nivogolden.com">info@nivogolden.com</a></p>
+                                <p>ventas@nivogolden.com</p>
                             </div>
                         </div>
 
-                        <div class="contact-item mb-4">
+                        <div class="contact-item mb-4 d-flex align-items-center">
                             <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-clock fa-lg"></i>
                             </div>
                             <div class="contact-details">
                                 <h5>Horarios de Atención</h5>
@@ -148,17 +150,21 @@
                         <div class="social-media-section mt-5">
                             <h5 class="mb-3">Síguenos en Redes Sociales</h5>
                             <div class="social-links-contact">
-                                <a href="#" class="social-link-contact facebook">
+                                <a href="https://www.facebook.com/nivogolden/" class="social-link-contact facebook">
                                     <i class="fab fa-facebook-f"></i>
                                     <span class="ms-2">Facebook</span>
                                 </a>
-                                <a href="#" class="social-link-contact instagram">
+                                <a href="https://www.instagram.com/nivogolden/" class="social-link-contact instagram">
                                     <i class="fab fa-instagram"></i>
                                     <span class="ms-2">Instagram</span>
                                 </a>
-                                <a href="#" class="social-link-contact whatsapp">
+                                <a href="https://wa.me/524777877081" class="social-link-contact whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                     <span class="ms-2">WhatsApp</span>
+                                </a>
+                                <a href="https://www.tiktok.com/@nivogoldenbynivo?_t=ZS-90CzuSpGFXU&_r=1" class="social-link-contact tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="ms-2">TikTok</span>
                                 </a>
                             </div>
                         </div>
@@ -167,17 +173,21 @@
                         <div class="purchase-section mt-5">
                             <h5 class="mb-3">Compra Nuestros Productos</h5>
                             <div class="purchase-links">
-                                <a href="#" class="purchase-link amazon">
+                                <a href="https://www.amazon.com.mx/stores/NivoGolden/P%C3%A1ginadeinicio/page/981C729A-F422-4A40-8CF5-B3F395AC0E1D?ie=UTF8&field-lbr_brands_browse-bin=Nivo+Golden&ref_=cm_sw_r_ud_ast_store_MQJ0XAGEQVVJ1W7VT6R9" class="purchase-link amazon">
                                     <i class="fab fa-amazon"></i>
                                     <span class="ms-2">Amazon</span>
                                 </a>
-                                <a href="#" class="purchase-link mercadolibre">
+                                <a href="https://www.mercadolibre.com.mx/tienda/nivo-golden" class="purchase-link mercadolibre">
                                     <i class="fas fa-shopping-cart"></i>
                                     <span class="ms-2">Mercado Libre</span>
                                 </a>
-                                <a href="#" class="purchase-link walmart">
+                                <a href="https://www.walmart.com.mx/ip/perros/caja-de-palitos-de-carnaza-surtido-2kg-nivo-golden/00085005737202?from=/search" class="purchase-link walmart">
                                     <i class="fas fa-store"></i>
                                     <span class="ms-2">Walmart</span>
+                                </a>
+                                <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="purchase-link tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="ms-2">TikTok</span>
                                 </a>
                             </div>
                         </div>
@@ -195,11 +205,11 @@
                     <h3 class="text-center mb-4">Nuestra Ubicación</h3>
                     <div class="map-container">
                         <div class="map-placeholder">
-                            <img src="img/img-mapa-2.png" alt="Mapa León, Guanajuato" class="img-fluid rounded">
+                            <img src="img/img-mapa-2.png" alt="Mapa León, Guanajuato" loading="lazy" class="img-fluid rounded">
                             <div class="map-overlay">
-                                <div class="map-info">
-                                    <h5><i class="fas fa-map-marker-alt text-primary"></i> León, Guanajuato</h5>
-                                    <p>Nos encontramos en el corazón de León, Guanajuato, México</p>
+                                <div class="map-info p-4">
+                                    <h5><i class="fas fa-map-marker-alt" style="color:#78b82a"></i> León, Guanajuato</h5>
+                                    <p>Nos encontramos en el corazón de León</p>
                                     <a href="https://maps.app.goo.gl/phtbww8faVqnLctc6" target="_blank"
                                         class="btn btn-primary btn-sm">
                                         <i class="fas fa-directions me-2"></i>Cómo Llegar
@@ -232,17 +242,16 @@
                 <div class="col-lg-3 mb-3">
                     <h6>Productos</h6>
                     <ul class="list-unstyled">
-                        <li><a href="productos.html#perros" class="text-light">Para Perros</a></li>
-                        <li><a href="productos.html#gatos" class="text-light">Para Gatos</a></li>
                         <li><a href="productos.html" class="text-light">Todos los Productos</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 mb-3">
                     <h6>Síguenos</h6>
                     <div class="social-icons">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="https://www.facebook.com/nivogolden/" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.instagram.com/nivogolden/" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://wa.me/524777877081" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="text-light me-3"><i class="fab fa-tiktok fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -259,7 +268,7 @@
     </footer>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/524771234567" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/524777877081" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
