@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.innerHTML = `
         <div class="product-card shadow-sm rounded p-3 h-100">
           <div class="product-image text-center mb-3">
-            <img src="${imageUrl}" alt="${p.name}" class="img-fluid rounded" style="height: 200px; object-fit: cover;">
+            <img src="${imageUrl}" alt="${p.name}" class="img-fluid rounded" style="height: 200px; object-fit: contain;">
           </div>
           <div class="product-info text-center">
             <h5>${p.name}</h5>
