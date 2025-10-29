@@ -2,9 +2,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const SHEET_URL =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWldGqHxXEmTSphqY5YaOpsPA8uHbGB20lh-Gc7mlOWMNY7dZqMZUGY6upXBnbKzTHEOI9iQRblKHv/pub?output=csv"
 
-  const productosPerros = document.getElementById("productosPerros")
-  const productosGatos = document.getElementById("productosGatos")
+  // Contenedores de productos
+  const productosPerrosContainer = document.getElementById("productosPerros")
+  const productosGatosContainer = document.getElementById("productosGatos")
 
+  // Contenedores de vistas (Pestaña Perros)
+  const categoryGridPerros = document.getElementById("categoryGridPerros")
+  const backToCategoriesBtn = document.getElementById("backToCategories")
+
+  // Tarjetas de categoría
+  const categoryCards = document.querySelectorAll(".category-card-custom")
+
+  // --- MANEJO DE VISTAS (SOLO PARA PERROS) ---
+
+  /* Muestra la vista de categorías y oculta los productos */
+  function showCategoriesView() {
+    if (categoryGridPerros) categoryGridPerros.style.display = "flex"
+    if (productosPerrosContainer) productosPerrosContainer.style.display = "none"
+    if (backToCategoriesBtn) backToCategoriesBtn.style.display = "none"
+  }
+
+  /* Muestra los productos de una categoría específica */
+  function showProductsView(category) {
+    if (categoryGridPerros) categoryGridPerros.style.display = "none"
+    if (productosPerrosContainer) productosPerrosContainer.style.display = "flex"
+    if (backToCategoriesBtn) backToCategoriesBtn.style.display = "block"
+
+    // Filtrar productos por categoría
+    const allItems = productosPerrosContainer.querySelectorAll(".product-item")
+    allItems.forEach(item => {
+
+      const itemCategory = item.getAttribute("data-category")
+      if (itemCategory && itemCategory.trim().toLowerCase() === category.trim().toLowerCase()) {
+        item.style.display = "block"
+      } else {
+        item.style.display = "none"
+      }
+    })
+  }
+
+  // --- Carga de Datos (PapaParse) ---
   Papa.parse(SHEET_URL, {
     download: true,
     header: true,
@@ -16,14 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("No se encontraron productos")
         }
 
-        const perros = data.filter((p) => p.category !== "gato")
-        const gatos = data.filter((p) => p.category === "gato")
+        // Filtrar productos en gatos y perros
+        const gatos = data.filter((p) => 
+          p.category && p.category.trim().toLowerCase() === "gato"
+        )
+        const perros = data.filter((p) => 
+          !p.category || p.category.trim().toLowerCase() !== "gato"
+        )
 
-        renderProducts(perros, productosPerros)
-        renderProducts(gatos, productosGatos)
+        // Renderizar ambos contenedores.
+        renderProducts(perros, productosPerrosContainer)
+        renderProducts(gatos, productosGatosContainer)
 
-        setupFilters()
-        setupTabs()
+        // Configurar lógica de pestañas y hash URL
+        setupTabLogic()
+
       } catch (err) {
         mostrarError(err.message)
       }
@@ -34,12 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   })
 
+  /**
+   * Renderiza las tarjetas de producto en el contenedor
+   */
   function renderProducts(products, container) {
+    if (!container) return // Salir si el contenedor no existe
     container.innerHTML = ""
     products.forEach((p) => {
       const card = document.createElement("div")
-      card.className = "col-lg-4 col-md-6 mb-4 product-item"
-      card.setAttribute("data-category", p.category)
+      // product-item es la clase que usamos para filtrar
+      card.className = "col-lg-4 col-md-6 mb-4 product-item" 
+      // Guardar categoría
+      card.setAttribute("data-category", p.category ? p.category.trim().toLowerCase() : "")
 
       // limpiar link de Drive
       let imageUrl = p.image.trim()
@@ -48,17 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (match && match[1]) {
           imageUrl = `https://drive.google.com/uc?export=view&id=${match[1]}`
         }
-        console.log(imageUrl)
       }
 
       card.innerHTML = `
         <div class="product-card shadow-sm rounded p-3 h-100">
           <div class="product-image text-center mb-3">
-            <img src="${imageUrl}" alt="${p.name}" class="img-fluid rounded">
+            <img src="${imageUrl}" alt="${p.name}" class="img-fluid rounded" style="height: 200px; object-fit: cover;">
           </div>
           <div class="product-info text-center">
             <h5>${p.name}</h5>
-            <p class="product-description">${p.description}</p>
           </div>
         </div>
       `
@@ -66,56 +114,54 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  function setupFilters() {
-    const filterButtons = document.querySelectorAll(".filter-btn")
+  /* Configurar la lógica de las pestañas y el # de la URL */
+  function setupTabLogic() {
+    // Lógica de hash #
+    const hash = window.location.hash
+    if (hash === '#gatos') {
+      const tabButton = document.querySelector('button[data-bs-target="#gatos"]')
+      if (tabButton) {
+        const tab = new window.bootstrap.Tab(tabButton)
+        tab.show()
+      }
+    } else {
+      // Si no es #gatos, es #perros o nada. Mostrar categorías de perros.
+      showCategoriesView()
+    }
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const filter = this.getAttribute("data-filter")
-        const currentTab = document.querySelector(".tab-pane.active").id
-
-        const currentTabFilterButtons = document
-          .querySelector(`#${currentTab}`)
-          .parentElement.querySelectorAll(".filter-btn")
-
-        currentTabFilterButtons.forEach((btn) => btn.classList.remove("active"))
-        this.classList.add("active")
-
-        const currentTabProducts = document
-          .querySelector(`#${currentTab} .row[id*="productos"]`)
-          .querySelectorAll(".product-item")
-
-        currentTabProducts.forEach((item) => {
-          if (filter === "all" || item.getAttribute("data-category") === filter) {
-            item.style.display = "block"
-          } else {
-            item.style.display = "none"
-          }
-        })
+    // Listener para CUANDO SE CAMBIA de pestaña
+    const tabs = document.querySelectorAll('button[data-bs-toggle="pill"]')
+    tabs.forEach((tab) => {
+      tab.addEventListener("shown.bs.tab", (event) => {
+        // Si la pestaña que se acaba de mostrar es la de perros reiniciar vista de categorías
+        if (event.target.getAttribute("data-bs-target") === "#perros") {
+          showCategoriesView()
+        }
       })
     })
   }
 
-  function setupTabs() {
-    const tabs = document.querySelectorAll('button[data-bs-toggle="pill"]')
-    tabs.forEach((tab) => {
-      tab.addEventListener("shown.bs.tab", (event) => {
-        const targetId = event.target.getAttribute("data-bs-target") // #perros o #gatos
-        const container = document.querySelector(`${targetId} .row[id*="productos"]`)
-        const buttons = document.querySelectorAll(`${targetId} .filter-btn`)
+  // --- Listeners para los botones ---
 
-        // reiniciar filtros → activar "Todos"
-        buttons.forEach((btn) => btn.classList.remove("active"))
-        const defaultBtn = document.querySelector(`${targetId} .filter-btn[data-filter="all"]`)
-        if (defaultBtn) {
-          defaultBtn.classList.add("active")
-        }
-
-        // mostrar todos los productos de esa pestaña
-        container.querySelectorAll(".product-item").forEach((item) => {
-          item.style.display = "block"
-        })
-      })
+  // 1. Listeners para las TARJETAS DE CATEGORÍA
+  categoryCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault() // Prevenir cualquier comportamiento por defecto
+      const category = card.getAttribute('data-category')
+      showProductsView(category)
     })
+  })
+
+  // 2. Listener para el BOTÓN DE REGRESAR
+  if (backToCategoriesBtn) {
+    backToCategoriesBtn.addEventListener('click', showCategoriesView)
+  }
+
+  // posible error
+  function mostrarError(mensaje) {
+    const errorContainer = productosPerrosContainer || document.querySelector('.productos-main .container')
+    if (errorContainer) {
+      errorContainer.innerHTML = `<div class="alert alert-danger col-12">${mensaje}</div>`
+    }
   }
 })

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - Nivo Golden | Snacks Naturales para Mascotas</title>
-    <meta name="description" content="Descubre nuestra línea completa de snacks naturales para perros y gatos. Colágeno, proteína y salud dental en cada premio.">
-    
+    <meta name="description"
+        content="Descubre nuestra línea completa de snacks naturales para perros y gatos. Colágeno, proteína y salud dental en cada premio.">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- NAVEGACIÓN PRINCIPAL -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
@@ -81,35 +86,80 @@
             <div class="tab-content" id="categoryContent">
                 <!-- PRODUCTOS PARA PERROS -->
                 <div class="tab-pane fade show active" id="perros">
-                    <!-- Filtros de productos -->
+
                     <div class="row mb-4">
                         <div class="col-12">
-                            <div class="filter-buttons text-center">
-                                <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="colageno">Colágeno</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="carnaza">Carnaza</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="palitos">Palitos</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="snacks">Snacks</button>
+                            <button class="btn btn-outline-primary" id="backToCategories" style="display: none;">
+                                <i class="fas fa-arrow-left me-2"></i> Volver a Categorías
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row g-4" id="categoryGridPerros">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card-custom" data-category="colageno">
+                                <img src="img/placeholder.png" alt="Colágeno">
+                                <div class="category-card-custom-content">
+                                    <h4>Colágeno</h4>
+                                    <p>Snacks ricos en colágeno para articulaciones y piel saludable.</p>
+                                    <span class="btn btn-primary">Ver Productos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card-custom" data-category="carnaza">
+                                <img src="img/placeholder.png" alt="Carnaza">
+                                <div class="category-card-custom-content">
+                                    <h4>Carnaza</h4>
+                                    <p>Carnazas 100% naturales para mordida duradera y salud dental.</p>
+                                    <span class="btn btn-primary">Ver Productos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card-custom" data-category="triturados">
+                                <img src="img/placeholder.png" alt="Triturados">
+                                <div class="category-card-custom-content">
+                                    <h4>Triturados</h4>
+                                    <p>Premios triturados fáciles de digerir, ideales para cachorros.</p>
+                                    <span class="btn btn-primary">Ver Productos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card-custom" data-category="snacks premium">
+                                <img src="img/placeholder.png" alt="Snacks Premium">
+                                <div class="category-card-custom-content">
+                                    <h4>Snacks Premium</h4>
+                                    <p>Ingredientes selectos para un premio delicioso y nutritivo.</p>
+                                    <span class="btn btn-primary">Ver Productos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card-custom" data-category="snacks gourmet">
+                                <img src="img/placeholder.png" alt="Snacks Gourmet">
+                                <div class="category-card-custom-content">
+                                    <h4>Snacks Gourmet</h4>
+                                    <p>La línea más exclusiva para consentir a tu mejor amigo.</p>
+                                    <span class="btn btn-primary">Ver Productos</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Grid de productos para perros -->
-                    <div class="row" id="productosPerros"></div>
+
+                    <div class="row g-4" id="productosPerros" style="display: none;">
+                    </div>
                 </div>
 
                 <!-- PRODUCTOS PARA GATOS -->
                 <div class="tab-pane fade" id="gatos">
-                    <!-- Filtros de productos para gatos -->
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div class="filter-buttons text-center">
-                                <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos</button>
-                            </div>
-                        </div>
+                    <div class="row g-4" id="productosGatos">
                     </div>
-                    
-                    <!-- Grid de productos para gatos -->
-                    <div class="row" id="productosGatos"></div>
                 </div>
             </div>
         </div>
@@ -155,10 +205,14 @@
                 <div class="col-lg-3 mb-3">
                     <h6>Síguenos</h6>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/nivogolden/" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="https://www.instagram.com/nivogolden/" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://wa.me/524777877081" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
-                        <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="text-light me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+                        <a href="https://www.facebook.com/nivogolden/" class="text-light me-3"><i
+                                class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.instagram.com/nivogolden/" class="text-light me-3"><i
+                                class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://wa.me/524777877081" class="text-light me-3"><i
+                                class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="text-light me-3"><i
+                                class="fab fa-tiktok fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -187,4 +241,5 @@
     <script src="productos.js"></script>
 
 </body>
+
 </html>
