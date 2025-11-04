@@ -69,10 +69,10 @@
                 <div class="col-lg-8">
                     <div class="contact-form-container">
                         <h3 class="mb-3">Envíanos un Mensaje</h3>
-                        <form class="contact-form-full" data-captcha="true" id="contactForm"
-                            action="https://formsubmit.co/beloder569@dotxan.com" method="POST">
+                        <!-- EMPIEZA EL FORM -->
+                        <form class="contact-form-full" id="contactForm" name="contacto" data-netlify="true"
+                            action="/gracias.html">
 
-                            <!-- Campos -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre" class="form-label">Nombre Completo *</label>
@@ -91,19 +91,18 @@
 
                             <div class="mb-3">
                                 <label for="mensaje" class="form-label">Mensaje *</label>
-                                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required
+                                    maxlength="1000"></textarea>
                             </div>
-
-                            <!-- Config extra -->
-                            <input type="hidden" name="_next" value="https://nivogolden.netlify.app/gracias">
 
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
                             </button>
                         </form>
                         <p class="form-text small text-muted">
-                            Al enviar el formulario aceptas que Nivo Golden utilice tus datos para responder tu consulta.
-                            No compartimos tu información con terceros. 
+                            Al enviar el formulario aceptas que Nivo Golden utilice tus datos para responder tu
+                            consulta.
+                            No compartimos tu información con terceros.
                         </p>
 
                     </div>
@@ -162,7 +161,8 @@
                                     <i class="fab fa-whatsapp"></i>
                                     <span class="ms-2">WhatsApp</span>
                                 </a>
-                                <a href="https://www.tiktok.com/@nivogoldenbynivo?_t=ZS-90CzuSpGFXU&_r=1" class="social-link-contact tiktok">
+                                <a href="https://www.tiktok.com/@nivogoldenbynivo?_t=ZS-90CzuSpGFXU&_r=1"
+                                    class="social-link-contact tiktok">
                                     <i class="fab fa-tiktok"></i>
                                     <span class="ms-2">TikTok</span>
                                 </a>
@@ -173,15 +173,18 @@
                         <div class="purchase-section mt-5">
                             <h5 class="mb-3">Compra Nuestros Productos</h5>
                             <div class="purchase-links">
-                                <a href="https://www.amazon.com.mx/stores/NivoGolden/P%C3%A1ginadeinicio/page/981C729A-F422-4A40-8CF5-B3F395AC0E1D?ie=UTF8&field-lbr_brands_browse-bin=Nivo+Golden&ref_=cm_sw_r_ud_ast_store_MQJ0XAGEQVVJ1W7VT6R9" class="purchase-link amazon">
+                                <a href="https://www.amazon.com.mx/stores/NivoGolden/P%C3%A1ginadeinicio/page/981C729A-F422-4A40-8CF5-B3F395AC0E1D?ie=UTF8&field-lbr_brands_browse-bin=Nivo+Golden&ref_=cm_sw_r_ud_ast_store_MQJ0XAGEQVVJ1W7VT6R9"
+                                    class="purchase-link amazon">
                                     <i class="fab fa-amazon"></i>
                                     <span class="ms-2">Amazon</span>
                                 </a>
-                                <a href="https://www.mercadolibre.com.mx/tienda/nivo-golden" class="purchase-link mercadolibre">
+                                <a href="https://www.mercadolibre.com.mx/tienda/nivo-golden"
+                                    class="purchase-link mercadolibre">
                                     <i class="fas fa-shopping-cart"></i>
                                     <span class="ms-2">Mercado Libre</span>
                                 </a>
-                                <a href="https://www.walmart.com.mx/ip/perros/caja-de-palitos-de-carnaza-surtido-2kg-nivo-golden/00085005737202?from=/search" class="purchase-link walmart">
+                                <a href="https://www.walmart.com.mx/ip/perros/caja-de-palitos-de-carnaza-surtido-2kg-nivo-golden/00085005737202?from=/search"
+                                    class="purchase-link walmart">
                                     <i class="fas fa-store"></i>
                                     <span class="ms-2">Walmart</span>
                                 </a>
@@ -205,10 +208,12 @@
                     <h3 class="text-center mb-4">Nuestra Ubicación</h3>
                     <div class="map-container">
                         <div class="map-placeholder">
-                            <img src="img/img-mapa-2.webp" alt="Mapa León, Guanajuato" loading="lazy" class="img-fluid rounded">
+                            <img src="img/img-mapa-2.webp" alt="Mapa León, Guanajuato" loading="lazy"
+                                class="img-fluid rounded">
                             <div class="map-overlay">
                                 <div class="map-info p-4">
-                                    <h5><i class="fas fa-map-marker-alt" style="color:#78b82a"></i> León, Guanajuato</h5>
+                                    <h5><i class="fas fa-map-marker-alt" style="color:#78b82a"></i> León, Guanajuato
+                                    </h5>
                                     <p>Nos encontramos en el corazón de León</p>
                                     <a href="https://maps.app.goo.gl/phtbww8faVqnLctc6" target="_blank"
                                         class="btn btn-primary btn-sm">
@@ -248,10 +253,14 @@
                 <div class="col-lg-3 mb-3">
                     <h6>Síguenos</h6>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/nivogolden/" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="https://www.instagram.com/nivogolden/" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://wa.me/524777877081" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
-                        <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="text-light me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+                        <a href="https://www.facebook.com/nivogolden/" class="text-light me-3"><i
+                                class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.instagram.com/nivogolden/" class="text-light me-3"><i
+                                class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://wa.me/524777877081" class="text-light me-3"><i
+                                class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="https://vt.tiktok.com/ZSHnNp1MxUuMn-xK5Er/" class="text-light me-3"><i
+                                class="fab fa-tiktok fa-lg"></i></a>
                     </div>
                 </div>
             </div>
